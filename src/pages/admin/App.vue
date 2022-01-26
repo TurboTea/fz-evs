@@ -7,6 +7,11 @@
 <script lang="ts" setup>
 import { useLocale } from '@shared/hooks/useLocale'
 import { useLayout } from '@shared/store/modules/layout'
+import { prisma } from '@/db'
 const { elLocale } = useLocale(useLayout)
+
+prisma.user.findMany().then(_ => {
+  console.log(_)
+})
 </script>
 <style></style>

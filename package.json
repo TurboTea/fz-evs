@@ -20,6 +20,7 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@electron/remote": "^2.0.1",
     "@element-plus/icons-vue": "^0.2.4",
     "@prisma/client": "3.8.1",
     "@vuelidate/core": "^2.0.0-alpha.32",

@@ -1,9 +1,23 @@
 import { app, globalShortcut, protocol, BrowserWindow, Menu } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
-const isDevelopment = process.env.NODE_ENV !== 'production'
-import './background/database'
 import updateHandel from './background/autoUpdate'
+import { dbPath, isDev } from '@/constants'
+import * as fs from 'fs'
+import { join } from 'path'
+if (!isDev) {
+  try {
+    // database file does not exist, need to create
+    fs.copyFileSync(join(process.resourcesPath, 'prisma/dev.db'), dbPath, fs.constants.COPYFILE_EXCL)
+    console.log('New database file created')
+  } catch (err: any) {
+    if (err.code != 'EEXIST') {
+      console.error(`Failed creating sqlite file.`, err)
+    } else {
+      console.log('Database file detected')
+    }
+  }
+}
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
@@ -61,7 +75,7 @@ app.on('activate', () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', async () => {
-  if (isDevelopment && !process.env.IS_TEST) {
+  if (isDev && !process.env.IS_TEST) {
     // Install Vue Devtools
     try {
       await installExtension(VUEJS_DEVTOOLS)
@@ -73,7 +87,7 @@ app.on('ready', async () => {
 })
 
 // Exit cleanly on request from parent process in development mode.
-if (isDevelopment) {
+if (isDev) {
   if (process.platform === 'win32') {
     process.on('message', data => {
       if (data === 'graceful-exit') {

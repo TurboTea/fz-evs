@@ -74,7 +74,7 @@ module.exports = defineConfig({
   pluginOptions: {
     electronBuilder: {
       externals: ['@prisma/client'],
-      extraResources: [],
+      extraResources: ['prisma/**/*', 'node_modules/.prisma/**/*', 'node_modules/@prisma/client/**/*'],
       chainWebpackRendererProcess: config => {
         config.plugin('define').tap(args => {
           return args
