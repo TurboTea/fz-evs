@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>合约 选中</title>
+    <defs>
+        <linearGradient x1="21.0741237%" y1="4.25330813%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#36BBE8" offset="0%"></stop>
+            <stop stop-color="#4E67FE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="左侧导航台" transform="translate(-918.000000, -556.000000)">
+            <g id="编组-9" transform="translate(910.000000, 548.000000)">
+                <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="36" height="36"></rect>
+                <g id="编组-8" transform="translate(8.100000, 8.100000)" fill="url(#linearGradient-1)">
+                    <path d="M20.7,8.1 L20.7,19.8 L1.82076576e-12,19.8 L1.82076576e-12,8.1 L20.7,8.1 Z M18,14.4 L8.1,14.4 L8.1,17.1 L18,17.1 L18,14.4 Z M20.7,2.22932783e-13 L20.7,5.4 L1.82076576e-12,5.4 L1.82076576e-12,2.22932783e-13 L20.7,2.22932783e-13 Z" id="形状结合"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

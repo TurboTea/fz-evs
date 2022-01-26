@@ -1,0 +1,18 @@
+{
+  "name": "routerConfig",
+  "title": "用户",
+  "children": [
+    {
+      "path": "",
+      "name": "home",
+      "meta": {
+        "element": "home/index.vue",
+        "title": "home",
+        "level": 1,
+        "icon": "401",
+        "showInAsideMenu": true,
+        "fixed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+- [colorful svg](./font) as ``<svg><path></path><svg>``
+- [origin svg](./svg) as other svg

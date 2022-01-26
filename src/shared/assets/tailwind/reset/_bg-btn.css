@@ -1,0 +1,25 @@
+.bg-btn-primary, .bg-btn-secondary {
+    position: relative;
+    font-weight: 400!important;
+    font-size: 14px!important;
+    line-height: 20px!important;
+}
+.bg-btn-primary:after, .bg-btn-secondary:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    padding: 0 8px;
+    height: calc(29/36 * 100%);
+    border-radius: 15px;
+    opacity: 0.6;
+    filter: blur(7px);
+    left: 50%;
+    top: calc(18/36 * 100%);
+    transform: translateX(-50%);
+}
+.bg-btn-primary:after {
+    background: #426BE4;
+}
+.bg-btn-secondary:after {
+    background: #6C7180;
+}

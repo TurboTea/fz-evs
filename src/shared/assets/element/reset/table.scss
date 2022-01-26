@@ -1,0 +1,43 @@
+// table
+:deep(.el-table) {
+  // 去除表格底部的横线
+  .el-table__inner-wrapper:before {
+    display: none;
+  }
+  // 表头样式
+  thead .el-table__cell {
+    border-bottom: none !important;
+    background-color: #f2f4f7;
+  }
+  // 设置行与行之间的间距
+  .el-table__body {
+    -webkit-border-vertical-spacing: 10px; // 垂直间距
+  }
+  // 设置表格内容区域背景色为透明色
+  &,
+  & .el-table__expanded-cell {
+    background-color: transparent;
+  }
+  // 行边框圆角
+  .el-table__row {
+    td {
+      border-width: 0;
+      &:first-of-type {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      &:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+  }
+  // 操作按钮分割符号
+  .el-button + .el-button::before {
+    content: '';
+    height: 12px;
+    width: 1px;
+    margin-right: 12px;
+    background: rgba(0, 0, 0, 0.45);
+  }
+}

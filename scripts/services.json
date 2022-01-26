@@ -1,0 +1,17 @@
+[
+  {
+    "name": "gateway-service",
+    "port": 10001,
+    "path": "https://gitlab.33.cn/baas3/services/gateway-service/raw/3.0.0-dev-wugang/src/main/resources/apifox.json"
+  },
+  {
+    "name": "chain-service",
+    "port": 10002,
+    "path": "https://gitlab.33.cn/baas3/services/chain-service/raw/3.0.0-neo-dev/service-impl/src/main/resources/apifox.json"
+  },
+  {
+    "name": "user-service",
+    "port": 10003,
+    "path": "https://gitlab.33.cn/baas3/services/user-service/raw/3.0.0-dev-wugang/service-impl/src/main/resources/apifox.json"
+  }
+]

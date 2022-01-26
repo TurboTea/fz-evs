@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url('@assets/font/PingFangSC-Regular.ttf');
+}
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url('@assets/font/PingFangSC-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url('@assets/font/PingFangSC-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'PingFangSC-Medium';
+    src: url('@assets/font/PingFangSC-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url('@assets/font/PingFangSC-Semibold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'PingFangSC-Semibold';
+    src: url('@assets/font/PingFangSC-Semibold.ttf');
+    font-weight: 600;
+}
+html, body {
+    font-family: 'PingFangSC-Regular','PingFangSC-Medium','PingFangSC-Semibold'!important;
+}

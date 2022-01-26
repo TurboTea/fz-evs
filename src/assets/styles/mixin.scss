@@ -1,0 +1,50 @@
+// 插入样式块
+
+// todo 光标选中
+
+// 清除浮动
+@mixin clearFix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 滚动条样式
+@mixin scrollBar {
+  &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #2555c6;
+  }
+  &::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #ededed;
+  }
+}
+
+// 表格 todo 先留着，后面写到reset-ui里
+@mixin table {
+  // border-radius: 8px 8px 0px 0px;
+
+  // /deep/ th {
+  //   height: 50px;
+  //   background: #f6f6f6;
+  //   font-family: PingFangSC-Medium, PingFang SC;
+  //   color: #636363;
+  // }
+
+  // /deep/ td {
+  //   height: 50px;
+  //   padding: 0;
+  // }
+}
