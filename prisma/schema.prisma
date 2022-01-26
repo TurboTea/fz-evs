@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// https://www.prisma.io/docs/concepts/components/prisma-migrate
+// npx prisma generate
+// npx prisma db push
+// npx prisma migrate dev --name init
+// prisma migrate dev --name added_job_title
+// npx prisma migrate dev
+// npx prisma migrate dev --create-only
+// npx prisma migrate deploy
+generator client {
+  provider = "prisma-client-js"
+  engineType = "library"
+  binaryTargets = ["native", "windows"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./data.db"
+}
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  name    String?
+  jobTitle String
+}
