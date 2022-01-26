@@ -2,7 +2,7 @@
 const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const resolve = dir => path.join(__dirname, dir)
-const sign = process.argv[4]
+const sign = process.argv[4] ?? 'dev'
 const webpackBundleAnalyzer = false
 const productionGzipExtensions = ['js', 'css']
 const Components = require('unplugin-vue-components/webpack')

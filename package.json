@@ -9,7 +9,7 @@
     "api:generate": "ts-node scripts/api-generate.ts",
     "api:mock": "ts-node scripts/api-mock.ts",
     "dev": "yarn serve & yarn api:mock",
-    "electron:build": "vue-cli-service electron:build  --mode dev",
+    "electron:build": "vue-cli-service electron:build --mode dev",
     "electron:serve": "vue-cli-service electron:serve --mode dev",
     "font": " icon-font-generator src/assets/icons/font/*.svg -o src/assets/font --name font --prefix font",
     "lint-staged": "lint-staged",
