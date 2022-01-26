@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { SYSTEM_ROUTES } from '@shared/router/constants'
 import { zookeeper } from '@shared/router/zookeeper'
 //配置路由
@@ -44,6 +44,6 @@ const routes = [
   ...SYSTEM_ROUTES,
 ]
 export const router = createRouter({
-  history: createWebHistory('/admin'),
+  history: process.env.IS_ELECTRON ? createWebHashHistory('/admin') : createWebHistory(),
   routes,
 })

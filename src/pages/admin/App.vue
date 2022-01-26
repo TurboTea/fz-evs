@@ -10,7 +10,7 @@ import { useLayout } from '@shared/store/modules/layout'
 import { prisma } from '@/db'
 const { elLocale } = useLocale(useLayout)
 
-prisma.user.findMany().then(_ => {
+prisma.company.findMany().then(_ => {
   console.log(_)
 })
 </script>

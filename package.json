@@ -9,7 +9,7 @@
     "api:generate": "ts-node scripts/api-generate.ts",
     "api:mock": "ts-node scripts/api-mock.ts",
     "dev": "yarn serve & yarn api:mock",
-    "electron:build": "vue-cli-service electron:build --mode dev",
+    "electron:build": "vue-cli-service electron:build  --mode dev",
     "electron:serve": "vue-cli-service electron:serve --mode dev",
     "font": " icon-font-generator src/assets/icons/font/*.svg -o src/assets/font --name font --prefix font",
     "lint-staged": "lint-staged",
@@ -18,7 +18,6 @@
     "prepare": "husky install",
     "tailwind": "npx tailwindcss -i src/assets/css/tailwind.css -o ./tailwind.css --watch"
   },
-  "main": "background.js",
   "dependencies": {
     "@electron/remote": "^2.0.1",
     "@element-plus/icons-vue": "^0.2.4",

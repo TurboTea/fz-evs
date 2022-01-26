@@ -1,3 +1,4 @@
+//asar extract app.asar ./.
 const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const resolve = dir => path.join(__dirname, dir)
@@ -97,7 +98,7 @@ module.exports = defineConfig({
           installerHeaderIcon: './build/icons/icon.ico', // 安装时头部图标
           createDesktopShortcut: true, // 创建桌面图标
           createStartMenuShortcut: true, // 创建开始菜单图标
-          shortcutName: '自媒体自助', // 图标名称
+          shortcutName: '方正进销存系统', // 图标名称
         },
         publish: [
           {
