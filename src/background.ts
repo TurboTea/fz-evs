@@ -4,6 +4,22 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import updateHandel from './background/autoUpdate'
 import { dbPath, isDev } from '@/constants'
+import fs from 'fs'
+import { join } from 'path'
+
+if (!isDev) {
+  try {
+    // database file does not exist, need to create
+    fs.copyFileSync(join(process.resourcesPath, 'prisma/dev.db'), dbPath, fs.constants.COPYFILE_EXCL)
+    console.log('New database file created')
+  } catch (err: any) {
+    if (err.code != 'EEXIST') {
+      console.error(`Failed creating sqlite file.`, err)
+    } else {
+      console.log('Database file detected')
+    }
+  }
+}
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 

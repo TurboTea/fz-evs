@@ -74,7 +74,7 @@ const chainProd = config => {
 module.exports = defineConfig({
   pluginOptions: {
     electronBuilder: {
-      externals: ['@prisma/client', 'sqlite3'],
+      externals: ['@prisma/client'],
       extraResources: ['prisma/**/*', 'node_modules/.prisma/**/*', 'node_modules/@prisma/client/**/*'],
       chainWebpackRendererProcess: config => {
         config.plugin('define').tap(args => {

@@ -44,6 +44,6 @@ const routes = [
   ...SYSTEM_ROUTES,
 ]
 export const router = createRouter({
-  history: process.env.IS_ELECTRON ? createWebHashHistory('/admin') : createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 })
