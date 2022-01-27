@@ -74,7 +74,7 @@ const chainProd = config => {
 module.exports = defineConfig({
   pluginOptions: {
     electronBuilder: {
-      externals: ['@prisma/client'],
+      externals: ['@prisma/client', 'sqlite3'],
       extraResources: ['prisma/**/*', 'node_modules/.prisma/**/*', 'node_modules/@prisma/client/**/*'],
       chainWebpackRendererProcess: config => {
         config.plugin('define').tap(args => {
@@ -154,6 +154,11 @@ module.exports = defineConfig({
   transpileDependencies: true,
   pages,
   chainWebpack: config => {
+    config.merge({
+      externals: {
+        sqlite3: 'commonjs sqlite3',
+      },
+    })
     config.module
       .rule('vue')
       .use('vue-loader')

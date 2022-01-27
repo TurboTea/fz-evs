@@ -1,10 +1,10 @@
 {
   "name": "fz-evs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --mode dev",
-    "build": "vue-cli-service build --mode prod",
+    "serve": "yarn electron:serve",
+    "build": "yarn electron:build",
     "lint": "vue-cli-service lint --mode dev",
     "api:generate": "ts-node scripts/api-generate.ts",
     "api:mock": "ts-node scripts/api-mock.ts",
