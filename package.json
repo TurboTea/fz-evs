@@ -1,5 +1,5 @@
 {
-  "name": "bass3",
+  "name": "fz-evs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,8 @@
     "api:generate": "ts-node scripts/api-generate.ts",
     "api:mock": "ts-node scripts/api-mock.ts",
     "dev": "yarn serve & yarn api:mock",
-    "electron:build": "vue-cli-service electron:build --mode dev",
-    "electron:serve": "vue-cli-service electron:serve --mode dev",
+    "electron:build": "vue-cli-service electron:build --mode dev -w",
+    "electron:serve": "vue-cli-service electron:serve --mode dev -w",
     "font": " icon-font-generator src/assets/icons/font/*.svg -o src/assets/font --name font --prefix font",
     "lint-staged": "lint-staged",
     "postinstall": "electron-builder install-app-deps",

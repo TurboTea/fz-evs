@@ -85,11 +85,11 @@ module.exports = defineConfig({
       customFileProtocol: './',
       // electron 构建配置
       builderOptions: {
-        productName: '方正进销存系统', // 项目名，也是生成的安装文件名
+        productName: 'fz-evs', // 项目名，也是生成的安装文件名
         appId: 'fz-evs.com', // 包名
         copyright: 'Copyright © 2022 fz', // 版权
         nsis: {
-          perMachine: false,
+          perMachine: true,
           oneClick: false, // 是否一键安装
           allowElevation: true, // 允许请求提升。 如果为false，则用户必须使用提升的权限重新启动安装程序。
           allowToChangeInstallationDirectory: true, // 允许修改安装目录
@@ -98,7 +98,7 @@ module.exports = defineConfig({
           installerHeaderIcon: './build/icons/icon.ico', // 安装时头部图标
           createDesktopShortcut: true, // 创建桌面图标
           createStartMenuShortcut: true, // 创建开始菜单图标
-          shortcutName: '方正进销存系统', // 图标名称
+          shortcutName: 'fz-evs', // 图标名称
         },
         publish: [
           {

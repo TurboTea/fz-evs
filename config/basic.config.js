@@ -3,6 +3,6 @@ module.exports = {
   qsArrayFormat: 'none',
   mockPrefix: '/mock',
   apiPrefix: '/root',
-  appName: '方正进销存系统',
+  appName: 'fz-evs',
   updateHost: '',
 }
