@@ -1,5 +1,5 @@
 <template>
-  <g-app-update />
+  <!--  <g-app-update />-->
   <el-config-provider :locale="elLocale">
     <router-view />
   </el-config-provider>
@@ -7,11 +7,12 @@
 <script lang="ts" setup>
 import { useLocale } from '@shared/hooks/useLocale'
 import { useLayout } from '@shared/store/modules/layout'
-import { prisma } from '@/db'
+import { Company } from '@prisma/client'
 const { elLocale } = useLocale(useLayout)
 
-prisma.company.findMany().then(_ => {
-  console.log(_)
+window.ipcRenderer.on('companyList:get', (e, companyList) => {
+  console.log(JSON.parse(companyList))
 })
+window.ipcRenderer.send('find:companyList')
 </script>
 <style></style>

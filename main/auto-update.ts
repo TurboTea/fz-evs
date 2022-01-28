@@ -1,7 +1,8 @@
 import { autoUpdater } from 'electron-updater'
 import { ipcMain } from 'electron'
+import { sendUpdateMessage } from './constants'
 
-const uploadUrl = process.env.VUE_APP_APIHOST + '/public/app/'
+const uploadUrl = process.env.UPDATE_HOST ?? 'http://localhost:9000' + '/public/app/'
 // 检测更新，在你想要检查更新的时候执行，renderer事件触发后的操作自行编写
 const UPDATE_MESSAGE_STATUS = {
   ERROR: 0,
@@ -10,11 +11,6 @@ const UPDATE_MESSAGE_STATUS = {
   NOT_UPDATE: 3,
   SUCCESS: 4,
   DOWNLOAD: 5,
-}
-
-// 通过main进程发送事件给renderer进程，提示更新信息
-function sendUpdateMessage(text: any, mainWindow: any) {
-  mainWindow.webContents.send('message', text)
 }
 
 function updateHandle(mainWindow: any) {

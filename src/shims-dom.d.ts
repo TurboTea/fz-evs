@@ -14,3 +14,6 @@ declare global {
     webkitRequestFullscreen?: () => Promise<void>
   }
 }
+interface Window {
+  ipcRenderer: any
+}

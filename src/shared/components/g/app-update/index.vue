@@ -12,8 +12,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ipcRenderer } from 'electron'
 import { ElMessageBox } from 'element-plus'
+import isElectron from 'is-electron'
 
 const UPDATE_MESSAGE_STATUS = {
   ERROR: 0,
@@ -24,17 +24,17 @@ const UPDATE_MESSAGE_STATUS = {
   DOWNLOAD: 5,
 }
 onMounted(async () => {
+  console.log(isElectron())
   setTimeout(() => {
-    ipcRenderer.send('checkForUpdate')
+    window.ipcRenderer.send('checkForUpdate')
   }, 1500)
 })
 const isUpdate = ref(false)
 const percent = ref(0)
 const version = ref('')
 const appName = ref('')
-ipcRenderer.on('message', (event: any, text: any) => {
+window.ipcRenderer.on('message', (event: any, text: any) => {
   const { code, message } = text
-  console.log(text)
   switch (code) {
     case UPDATE_MESSAGE_STATUS.UPDATE:
       version.value = message?.version
@@ -43,11 +43,6 @@ ipcRenderer.on('message', (event: any, text: any) => {
       break
     case UPDATE_MESSAGE_STATUS.ERROR:
       isUpdate.value = false
-      // ElNotification({
-      //   type: "error",
-      //   message: message,
-      //   title: "自动更新失败",
-      // });
       break
     case UPDATE_MESSAGE_STATUS.DOWNLOAD:
       isUpdate.value = false
@@ -55,17 +50,17 @@ ipcRenderer.on('message', (event: any, text: any) => {
         showCancelButton: false,
       })
         .then(() => {
-          ipcRenderer.send('isUpdateNow')
+          window.ipcRenderer.send('isUpdateNow')
         })
         .catch(() => {
-          ipcRenderer.send('isUpdateNow')
+          window.ipcRenderer.send('isUpdateNow')
         })
       break
     default:
       break
   }
 })
-ipcRenderer.on('downloadProgress', (event: any, progressObj: any) => {
+window.ipcRenderer.on('downloadProgress', (event: any, progressObj: any) => {
   percent.value = Number((progressObj?.percent || 0).toFixed(1))
 })
 </script>
