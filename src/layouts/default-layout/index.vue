@@ -27,7 +27,8 @@
       >
         <el-row type="flex" justify="space-between" align="middle" class="h-full">
           <div class="flex items-center gap-4">
-            <g-icon :name="isCollapse ? 'Expand' : 'Fold'" @click="fold" class="cursor-pointer" />
+            <!--            <g-icon :name="isCollapse ? 'Expand' : 'Fold'" @click="fold" class="cursor-pointer" />-->
+            <top-menu-list :enable-route-filter="enableRouteFilter" :theme-flag="themeFlag" :is-collapse="isCollapse" />
           </div>
           <div class="flex flex-row justify-start items-center">
             <router-link to="/search">
@@ -77,7 +78,7 @@
       >
         <el-breadcrumb :separator-icon="ArrowRight" class="pl-1">
           <el-breadcrumb-item v-for="(item, index) in breadcrumbList" :key="index" :to="{ name: item.name }">
-            <span class="text-gray-700 dark:text-white">{{ $t(`baas.default-layout.${item.name}`) }}</span>
+            <span class="text-gray-700 dark:text-white">{{ item.title }}</span>
           </el-breadcrumb-item>
         </el-breadcrumb>
         <div class="flex-grow mt-4 h-full overflow-y-auto rounded-t-md border">
@@ -96,6 +97,7 @@ import { LocaleType } from '@shared/types/layout'
 import { useUser } from '@shared/store/modules/user'
 import { changeLocale } from '@/plugins/i18n'
 import { onBeforeRouteUpdate } from 'vue-router'
+import TopMenuList from '@/layouts/default-layout/components/top-menu-list/index.vue'
 const props = defineProps({
   enableRouteFilter: {
     type: Boolean,

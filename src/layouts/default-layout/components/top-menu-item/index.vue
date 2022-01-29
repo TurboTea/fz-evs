@@ -4,7 +4,7 @@
       <g-icon :name="`${menu.meta.icon}`" class="mr-6 text-xl cursor-pointer" />
       <span>{{ menu.meta.title }}</span>
     </template>
-    <aside-menu-item v-for="item in menuList" :key="item.name" :menu="item" />
+    <top-menu-item v-for="item in menuList" :key="item.name" :menu="item" />
   </el-sub-menu>
   <el-menu-item :index="menu.name" @click="handleClickMenu()" v-else>
     <g-icon :name="`${menu.meta.icon}`" class="mr-6 text-xl cursor-pointer" />
@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-  name: 'aside-menu-item',
+  name: 'top-menu-item',
 }
 </script>
 <script setup>

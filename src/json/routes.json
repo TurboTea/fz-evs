@@ -7,12 +7,334 @@
       "name": "home",
       "meta": {
         "element": "home/index.vue",
-        "title": "home",
+        "title": "首页",
         "level": 1,
-        "icon": "401",
         "showInAsideMenu": true,
         "fixed": true
       }
+    },
+    {
+      "path": "stock",
+      "name": "stock",
+      "meta": {
+        "title": "仓库管理",
+        "level": 1,
+        "showInAsideMenu": true,
+        "fixed": true
+      },
+      "children": [
+        {
+          "path": "stock-in",
+          "name": "stock-in",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "入库登记",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "stock-out",
+          "name": "stock-out",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "出库登记",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "stock-check",
+          "name": "stock-check",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "库存盘点",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "stock-allocate",
+          "name": "stock-allocate",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "仓库调拨",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+        {
+          "path": "stock-summary",
+          "name": "stock-summary",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "库存汇总",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "stock-detail",
+          "name": "stock-detail",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "库存明细",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        }
+      ]
+    },
+
+    {
+      "path": "finance",
+      "name": "finance",
+      "meta": {
+        "title": "财务中心",
+        "level": 1,
+        "showInAsideMenu": true,
+        "fixed": true
+      },
+      "children": [
+        {
+          "path": "finance-account",
+          "name": "finance-account",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "账户管理",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "finance-in",
+          "name": "finance-in",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "应收管理",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "finance-out",
+          "name": "finance-out",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "应付管理",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "finance-revenue",
+          "name": "finance-revenue",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "收支管理",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "statistics",
+      "name": "statistics",
+      "meta": {
+        "title": "统计报表",
+        "level": 1,
+        "showInAsideMenu": true,
+        "fixed": true
+      },
+      "children": [
+        {
+          "path": "purchase-summary",
+          "name": "purchase-summary",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "采购汇总表",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "purchase-detail",
+          "name": "purchase-detail",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "采购明细表",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "company-rank",
+          "name": "company-rank",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "供应商排行榜",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+
+        {
+          "path": "sale-daily",
+          "name": "sale-daily",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "销售日报",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+        {
+          "path": "sale-monthly",
+          "name": "sale-monthly",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "销售月报",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+        {
+          "path": "sale-summary",
+          "name": "sale-summary",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "销售汇总表",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+        {
+          "path": "sale-detail",
+          "name": "sale-detail",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "销售明细表",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        },
+        {
+          "path": "sale-rank",
+          "name": "sale-rank",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "销售排行榜",
+            "level": 2,
+            "showInAsideMenu": true,
+            "fixed": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "company",
+      "name": "company",
+      "meta": {
+        "element": "temp/index.vue",
+        "title": "供应商资料",
+        "level": 1,
+        "showInAsideMenu": false,
+        "showInTopMenu": true,
+        "fixed": true
+      },
+      "children": [
+        {
+          "path": "",
+          "name": "company-index",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "列表",
+            "level": 1,
+            "showInAsideMenu": false,
+            "showInTopMenu": true,
+            "fixed": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "customer",
+      "name": "customer",
+      "meta": {
+        "element": "temp/index.vue",
+        "title": "客户资料",
+        "level": 1,
+        "showInAsideMenu": false,
+        "showInTopMenu": true,
+        "fixed": true
+      },
+      "children": [
+        {
+          "path": "",
+          "name": "customer-index",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "列表",
+            "level": 2,
+            "showInAsideMenu": false,
+            "showInTopMenu": false,
+            "fixed": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "product",
+      "name": "product",
+      "meta": {
+        "element": "temp/index.vue",
+        "title": "商品管理",
+        "level": 1,
+        "showInAsideMenu": false,
+        "showInTopMenu": true,
+        "fixed": true
+      },
+      "children": [
+        {
+          "path": "",
+          "name": "product-index",
+          "meta": {
+            "element": "temp/index.vue",
+            "title": "列表",
+            "level": 2,
+            "showInAsideMenu": false,
+            "showInTopMenu": true,
+            "fixed": true
+          }
+        }
+      ]
     }
   ]
 }
