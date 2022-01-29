@@ -41,6 +41,7 @@
     "electron-log": "^4.4.5",
     "electron-updater": "^4.6.1",
     "element-plus": "^1.3.0-beta.9",
+    "elp-crud": "^0.1.5",
     "fs": "^0.0.1-security",
     "global": "^4.4.0",
     "is-electron": "^2.2.1",

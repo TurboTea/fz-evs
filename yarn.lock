@@ -4648,7 +4648,7 @@ date-fns@^2.16.1:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.28.0.tgz#9570d656f5fc13143e50c975a3b6bbeb46cd08b2"
   integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
-dayjs@^1.10.7:
+dayjs@^1.10.6, dayjs@^1.10.7:
   version "1.10.7"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
   integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
@@ -5361,6 +5361,14 @@ elliptic@^6.5.3:
     inherits "^2.0.4"
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
+
+elp-crud@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/elp-crud/-/elp-crud-0.1.5.tgz#ded437af42b260ba6b2d85cd1a4ae098ba451829"
+  integrity sha512-3c6TEvCU/t1JFOrXezb5YFyu7DxjK0xscCg7Mi/HP8fl1UqS104UDTgVlmf9qNsBvE7IZFlUWtj5PInMywK+6w==
+  dependencies:
+    dayjs "^1.10.6"
+    lodash "^4.17.21"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
