@@ -12,6 +12,3 @@ export const useUser = defineStore('user', {
     overwrite: true,
   },
 })
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept(acceptHMRUpdate(useUser, import.meta.webpackHot))
-}

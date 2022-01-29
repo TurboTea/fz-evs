@@ -4,40 +4,23 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const resolve = dir => path.join(__dirname, dir)
 const sign = process.argv[4] ?? 'dev'
 const webpackBundleAnalyzer = false
-const productionGzipExtensions = ['js', 'css']
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 const AutoImport = require('unplugin-auto-import/webpack')
 const { EnvironmentPlugin, ProvidePlugin } = require('webpack')
 const { snakeCase, toUpper } = require('lodash')
-const { defineConfig } = require('@vue/cli-service')
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 const glob = require('glob')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const WebpackShellPluginNext = require('webpack-shell-plugin-next')
+const WebpackShellPluginNext = require('webpack-shell-plugin')
 console.log('sign:::', sign)
 const isProduction = process.env.NODE_ENV === 'production'
+console.log(isProduction)
 const appConfig = require(`./config/${sign}.config.js`)
 const services = require('./scripts/services.json')
-const pages = {}
-// 配置pages多页面获取当前文件夹下的html和js
-glob.sync('./src/pages/*/*.ts').forEach(filepath => {
-  const fileList = filepath.split('/')
-  const fileName = fileList[fileList.length - 2]
-  const chunkName = fileName === 'admin' ? 'index' : fileName
-  pages[chunkName] = {
-    entry: `src/pages/${fileName}/main.ts`,
-    // 模板来源
-    template: `src/pages/${fileName}/index.html`,
-    // 提取出来的通用 chunk 和 vendor chunk。
-    chunks: ['chunk-vendors', 'chunk-common', chunkName],
-  }
-})
 // 生产环境配置
 const chainProd = config => {
   config.store.set('devtool', '')
-  config.plugin('extract-css').use(MiniCssExtractPlugin)
   config.plugin('loadshReplace').use(new LodashModuleReplacementPlugin())
   config.module
     .rule('images')
@@ -62,23 +45,14 @@ const chainProd = config => {
     .options({
       name: 'assets/[name].[hash:8].[ext]',
     })
-  config.plugins.push(
-    new CompressionWebpackPlugin({
-      test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
-      threshold: 8192,
-      minRatio: 0.8,
-    }),
-  )
 }
 
-module.exports = defineConfig({
-  publicPath: isProduction ? './' : '',
+module.exports = {
+  publicPath: isProduction ? './' : './',
   pluginOptions: {},
   lintOnSave: false,
   filenameHashing: true,
   productionSourceMap: !isProduction,
-  transpileDependencies: true,
-  pages,
   chainWebpack: config => {
     config.merge({
       externals: {
@@ -215,6 +189,12 @@ module.exports = defineConfig({
     host: '0.0.0.0',
     port: appConfig.serverPort,
     compress: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/admin\/?.*/, to: path.posix.join('/', 'admin/index.html') },
+        { from: /./, to: path.posix.join('/', 'index.html') },
+      ],
+    },
     proxy: {
       // 开发环境代理配置
       '/root': {
@@ -246,4 +226,4 @@ module.exports = defineConfig({
       },
     },
   },
-})
+}

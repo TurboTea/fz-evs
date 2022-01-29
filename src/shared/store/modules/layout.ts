@@ -19,6 +19,3 @@ export const useLayout = defineStore('layout', {
     overwrite: true,
   },
 })
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept(acceptHMRUpdate(useLayout, import.meta.webpackHot))
-}

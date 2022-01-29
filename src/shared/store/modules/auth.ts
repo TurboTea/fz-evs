@@ -19,6 +19,3 @@ export const useAuth = defineStore('auth', {
     overwrite: true,
   },
 })
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept(acceptHMRUpdate(useAuth, import.meta.webpackHot))
-}

@@ -15,5 +15,7 @@ declare global {
   }
 }
 interface Window {
-  ipcRenderer: any
+  electron: {
+    ipcRenderer: any
+  }
 }
