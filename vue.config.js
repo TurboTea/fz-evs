@@ -9,7 +9,6 @@ const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 const AutoImport = require('unplugin-auto-import/webpack')
 const { EnvironmentPlugin, ProvidePlugin } = require('webpack')
 const { snakeCase, toUpper } = require('lodash')
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 const glob = require('glob')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const WebpackShellPluginNext = require('webpack-shell-plugin')
@@ -49,7 +48,15 @@ const chainProd = config => {
 
 module.exports = {
   publicPath: isProduction ? './' : './',
-  pluginOptions: {},
+  pluginOptions: {
+    electronBuilder: {
+      builderOptions: {
+        extraResources: ['prisma/**/*', 'node_modules/.prisma/**/*', 'node_modules/@prisma/client/**/*'],
+      },
+      externals: ['@prisma/client'],
+      nodeIntegration: true,
+    },
+  },
   lintOnSave: false,
   filenameHashing: true,
   productionSourceMap: !isProduction,
@@ -170,7 +177,6 @@ module.exports = {
         }, {}),
       ),
       new ProvidePlugin({}),
-      new NodePolyfillPlugin(),
       new WebpackShellPluginNext({
         onBuildStart: {
           scripts: ['echo "Webpack Start"'],
